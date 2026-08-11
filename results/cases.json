@@ -1,0 +1,782 @@
+[
+  {
+    "question_id": "q_001",
+    "category": "coding",
+    "question": "Write a Python function to reverse a linked list.",
+    "groq_answer": "### Reversing a Linked List in Python\n#### Overview\nReversing a linked list involves updating the `next` pointers of each node to point to the previous node. This can be achieved by iterating through the list and reversing the links.\n\n#### Code\n```python\nclass Node:\n    \"\"\"A simple Node class for a singly linked list.\"\"\"\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\nclass LinkedList:\n    \"\"\"A basic LinkedList class.\"\"\"\n    def __init__(self):\n        self.head = None\n\n    def append(self, data):\n        \"\"\"Add a new node to the end of the list.\"\"\"\n        new_node = Node(data)\n        if not self.head:\n            self.head = new_node\n            return\n        current = self.head\n        while current.next:\n            current = current.next\n        current.next = new_node\n\n    def reverse(self):\n        \"\"\"Reverse the linked list.\"\"\"\n        prev_node = None\n        current = self.head\n        while current:\n            next_node = current.next  # Store next node\n            current.next = prev_node  # Reverse the link\n            prev_node = current      # Move prev and current one step forward\n            current = next_node\n        self.head = prev_node  # Update the head pointer\n\n    def print_list(self):\n        \"\"\"Print the elements of the linked list.\"\"\"\n        current = self.head\n        while current:\n            print(current.data, end=\" \")\n            current = current.next\n        print()\n\n# Example usage\nif __name__ == \"__main__\":\n    ll = LinkedList()\n    ll.append(1)\n    ll.append(2)\n    ll.append(3)\n    ll.append(4)\n    ll.append(5)\n\n    print(\"Original List:\")\n    ll.print_list()\n\n    ll.reverse()\n\n    print(\"Reversed List:\")\n    ll.print_list()\n```\n\n#### Explanation\n1.  We define a `Node` class to represent each element in the linked list.\n2.  The `LinkedList` class has methods to `append` new nodes, `reverse` the list, and `print_list` to display the elements.\n3.  In the `reverse` method, we initialize three pointers: `prev_node`, `current`, and `next_node`.\n4.  We traverse the list, and for each node, we reverse the `next` pointer by setting `current.next` to `prev_node`.\n5.  We then move `prev_node` and `current` one step forward.\n6.  Finally, we update the `head` pointer to point to the new first node, which is the last node we visited (`prev_node`).\n7.  The `print_list` method is used to display the elements of the linked list.\n\n#### Output\n```\nOriginal List:\n1 2 3 4 5 \nReversed List:\n5 4 3 2 1 \n```",
+    "gemini_answer": "Gemini response for: Write a Python function to reverse a lin... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 2503,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a complete, correct, and well-explained implementation of a linked list reversal in Python, adhering to all aspects of the prompt. Option B fails to provide any relevant content due to a quota limit, resulting in a score of 1 across all criteria.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 661,
+      "gemini_tokens": 50,
+      "judge_tokens": 3330,
+      "total_tokens": 4041
+    },
+    "total_tokens": 4041,
+    "latency_ms": 24542
+  },
+  {
+    "question_id": "q_002",
+    "category": "reasoning",
+    "question": "If all A are B, and some B are C, are all A necessarily C? Explain why.",
+    "groq_answer": "No, all A are not necessarily C. \n\nHere's why:\n\n1. \"All A are B\" means that every A is a subset of B.\n2. \"Some B are C\" means that there is an overlap between B and C, but it does not mean that all B are C.\n3. Since all A are B, and only some B are C, it's possible that the A are part of the B that are not C.\n\nTo illustrate this with an example:\n\n* All cars (A) are vehicles (B).\n* Some vehicles (B) are boats (C).\n* It does not follow that all cars (A) are boats (C), because cars are a specific type of vehicle that is not a boat.\n\nTherefore, we cannot conclude that all A are necessarily C based on the given statements.",
+    "gemini_answer": "Gemini response for: If all A are B, and some B are C, are al... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 625,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a clear, accurate, and complete explanation of why all A are not necessarily C, adhering to the logical structure of the problem. Option B fails to provide any relevant content due to a quota limit, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 5.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 238,
+      "gemini_tokens": 50,
+      "judge_tokens": 2499,
+      "total_tokens": 2787
+    },
+    "total_tokens": 2787,
+    "latency_ms": 22635
+  },
+  {
+    "question_id": "q_003",
+    "category": "system_design",
+    "question": "Explain the difference between horizontal and vertical scaling in distributed databases.",
+    "groq_answer": "In distributed databases, scaling refers to the ability to increase the capacity of the system to handle growing amounts of data and user traffic. There are two primary approaches to scaling: horizontal scaling and vertical scaling.\n\n**Horizontal Scaling (Scaling Out):**\nHorizontal scaling involves adding more nodes (servers or machines) to the distributed database system to increase its overall capacity. Each node can handle a portion of the total workload, and the system can scale out by adding more nodes as needed. This approach allows the system to:\n\n* Handle increased traffic and data volume\n* Improve fault tolerance and high availability\n* Reduce the load on individual nodes\n\nExample: Adding more nodes to a distributed database cluster, each handling a portion of the data and workload.\n\n**Vertical Scaling (Scaling Up):**\nVertical scaling involves increasing the power and capacity of individual nodes (servers or machines) in the distributed database system. This can be done by:\n\n* Upgrading the hardware (e.g., adding more CPU, memory, or storage)\n* Increasing the resources allocated to the database (e.g., more CPU cores or memory)\n* Optimizing the database configuration and settings\n\nExample: Upgrading the hardware of a single node in a distributed database cluster to increase its processing power and storage capacity.\n\n**Key differences:**\n\n* **Direction of scaling**: Horizontal scaling adds more nodes, while vertical scaling increases the power of individual nodes.\n* **Scalability**: Horizontal scaling is generally more scalable, as it can handle increased traffic and data volume by adding more nodes. Vertical scaling is limited by the capacity of individual nodes.\n* **Cost and complexity**: Horizontal scaling can be more cost-effective and easier to manage, as it involves adding commodity nodes. Vertical scaling can be more expensive and complex, as it requires upgrading or replacing individual nodes.\n\nIn summary, horizontal scaling is often preferred in distributed databases, as it allows for more flexible and cost-effective scaling, while vertical scaling is typically used when there are specific requirements for high-performance or low-latency processing.",
+    "gemini_answer": "Gemini response for: Explain the difference between horizonta... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 2204,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a comprehensive and accurate explanation of horizontal and vertical scaling in distributed databases, covering all necessary aspects and adhering to the prompt. Option B fails to provide any relevant content due to a quota limit issue, resulting in a significantly lower score across all criteria.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 463,
+      "gemini_tokens": 50,
+      "judge_tokens": 2898,
+      "total_tokens": 3411
+    },
+    "total_tokens": 3411,
+    "latency_ms": 22670
+  },
+  {
+    "question_id": "q_004",
+    "category": "instruction_following",
+    "question": "Summarize the concept of API rate limiting in exactly 3 bullet points.",
+    "groq_answer": "* API rate limiting is a technique used to control the number of requests an application or user can make to an API within a specified time frame, helping to prevent abuse, denial-of-service attacks, and server overload.\n* Rate limits are typically enforced by tracking the number of requests from a specific IP address, user ID, or other identifier, and blocking or throttling additional requests once the limit is reached, with limits often reset after a certain period of time.\n* By implementing API rate limiting, developers can help ensure the reliability, scalability, and security of their APIs, while also protecting against malicious activity and reducing the risk of service disruptions, allowing for a better overall user experience.",
+    "gemini_answer": "Gemini response for: Summarize the concept of API rate limiti... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 744,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a thorough and accurate summary of API rate limiting, covering its purpose, enforcement methods, and benefits, though it does not strictly adhere to the 3 bullet point format. Option B fails to provide any relevant content due to a quota limit issue, resulting in a significantly lower score.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 3.0,
+      "tone_safety": 5.0,
+      "overall": 4.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 5.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 200,
+      "gemini_tokens": 50,
+      "judge_tokens": 2401,
+      "total_tokens": 2651
+    },
+    "total_tokens": 2651,
+    "latency_ms": 22897
+  },
+  {
+    "question_id": "q_005",
+    "category": "general_knowledge",
+    "question": "What is the capital of France and what river flows through it?",
+    "groq_answer": "The capital of France is Paris, and the river that flows through it is the Seine River.",
+    "gemini_answer": "Gemini response for: What is the capital of France and what r... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 87,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a fully correct, complete, and faithful answer to the user prompt, while Option B fails to answer the question and contains a placeholder response, resulting in a significantly lower score.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 81,
+      "gemini_tokens": 50,
+      "judge_tokens": 2089,
+      "total_tokens": 2220
+    },
+    "total_tokens": 2220,
+    "latency_ms": 22379
+  },
+  {
+    "question_id": "q_006",
+    "category": "math",
+    "question": "What is the derivative of f(x) = 3x^2 + 5x - 7 with respect to x?",
+    "groq_answer": "To find the derivative of f(x) = 3x^2 + 5x - 7, we'll apply the power rule of differentiation, which states that if f(x) = x^n, then f'(x) = nx^(n-1).\n\nUsing this rule, we get:\nf'(x) = d(3x^2)/dx + d(5x)/dx - d(7)/dx\n= 3(2)x^(2-1) + 5(1)x^(1-1) - 0\n= 6x + 5\n\nSo, the derivative of f(x) = 3x^2 + 5x - 7 with respect to x is f'(x) = 6x + 5.",
+    "gemini_answer": "Gemini response for: What is the derivative of f(x) = 3x^2 + ... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 338,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a correct, complete, and well-explained derivative of the function, adhering to all instructions and maintaining a professional tone. Option B fails to provide any relevant content due to a quota limit, resulting in a score of 1 across all criteria.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 234,
+      "gemini_tokens": 50,
+      "judge_tokens": 2437,
+      "total_tokens": 2721
+    },
+    "total_tokens": 2721,
+    "latency_ms": 24169
+  },
+  {
+    "question_id": "q_007",
+    "category": "coding",
+    "question": "Explain the difference between process and thread in operating systems.",
+    "groq_answer": "**Processes vs Threads**\n\nIn operating systems, a process and a thread are two fundamental concepts that enable concurrent execution of tasks.\n\n### Process\n\n* A **process** is an independent unit of execution that contains its own memory space, resources, and program counter.\n* Each process has its own:\n\t+ Memory space (address space)\n\t+ Program counter\n\t+ Stack\n\t+ Resources (e.g., open files, sockets)\n* Processes are heavyweight, meaning creating and switching between them is relatively slow.\n* Communication between processes is done using Inter-Process Communication (IPC) mechanisms, such as pipes, sockets, or shared memory.\n\n### Thread\n\n* A **thread** is a lightweight process that shares the same memory space and resources as other threads within the same process.\n* Threads have their own:\n\t+ Program counter\n\t+ Stack\n\t+ Local variables\n* Threads are lightweight, meaning creating and switching between them is relatively fast.\n* Threads within the same process can communicate with each other using shared memory and synchronization primitives (e.g., locks, semaphores).\n\n**Key differences:**\n\n1. **Memory space**: Processes have their own memory space, while threads share the same memory space.\n2. **Resources**: Processes have their own resources, while threads share resources with other threads in the same process.\n3. **Creation and switching**: Processes are heavyweight and slower to create and switch between, while threads are lightweight and faster.\n4. **Communication**: Processes use IPC mechanisms, while threads use shared memory and synchronization primitives.\n\nIn summary, processes are independent units of execution with their own resources and memory space, while threads are lightweight units of execution that share resources and memory space within the same process.",
+    "gemini_answer": "Gemini response for: Explain the difference between process a... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 1804,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a comprehensive and accurate explanation of the differences between processes and threads, covering all necessary aspects. Option B fails to provide any relevant content due to a quota limit, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 5.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 407,
+      "gemini_tokens": 50,
+      "judge_tokens": 2801,
+      "total_tokens": 3258
+    },
+    "total_tokens": 3258,
+    "latency_ms": 23102
+  },
+  {
+    "question_id": "q_008",
+    "category": "security",
+    "question": "What is SQL injection and how can developers prevent it?",
+    "groq_answer": "**SQL Injection Definition:**\nSQL injection (SQLi) is a type of web application security vulnerability that allows an attacker to inject malicious SQL code into a web application's database, potentially leading to unauthorized data access, modification, or deletion.\n\n**How SQL Injection Occurs:**\n\n1. **User Input**: An attacker provides malicious input to a web application, often through a form or URL parameter.\n2. **Input Validation**: The application fails to properly validate or sanitize the input, allowing the malicious code to pass through.\n3. **SQL Query Construction**: The application constructs a SQL query using the user input, which now contains the malicious code.\n4. **Query Execution**: The malicious SQL query is executed, potentially allowing the attacker to extract or modify sensitive data.\n\n**Prevention Techniques:**\n\n1. **Use Prepared Statements**: Prepared statements separate the SQL code from the user input, preventing malicious code from being injected.\n2. **Parameterized Queries**: Parameterized queries use placeholders for user input, which are then replaced with the actual input values, reducing the risk of SQL injection.\n3. **Input Validation and Sanitization**: Validate and sanitize user input to ensure it conforms to expected formats and does not contain malicious code.\n4. **Least Privilege Principle**: Grant the web application's database user account only the necessary privileges to perform its tasks, reducing the potential damage from a successful SQL injection attack.\n5. **Regular Security Audits and Testing**: Regularly audit and test your web application for SQL injection vulnerabilities to identify and address any weaknesses.\n6. **Use Web Application Firewalls (WAFs)**: Consider using a WAF to detect and prevent SQL injection attacks.\n7. **Keep Software Up-to-Date**: Ensure that your web application, database, and any related software are up-to-date with the latest security patches.\n\n**Example of Prepared Statement in Python (using SQLite):**\n```python\nimport sqlite3\n\n# Create a connection to the database\nconn = sqlite3.connect(\"example.db\")\ncursor = conn.cursor()\n\n# Define a prepared statement with a parameter\nquery = \"SELECT * FROM users WHERE username = ?\"\n\n# User input\nusername = \"john\"\n\n# Execute the prepared statement with the user input\ncursor.execute(query, (username,))\n\n# Fetch the results\nresults = cursor.fetchall()\n\n# Close the connection\nconn.close()\n```\nIn this example, the `?` placeholder in the SQL query is replaced with the actual user input (`username`) using the `execute()` method, which helps prevent SQL injection attacks.",
+    "gemini_answer": "Gemini response for: What is SQL injection and how can develo... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 2618,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a comprehensive and accurate explanation of SQL injection, including its definition, how it occurs, and multiple prevention techniques, along with a practical example. Option B fails to provide any relevant content due to a quota limit, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 576,
+      "gemini_tokens": 50,
+      "judge_tokens": 3165,
+      "total_tokens": 3791
+    },
+    "total_tokens": 3791,
+    "latency_ms": 22423
+  },
+  {
+    "question_id": "q_009",
+    "category": "conciseness",
+    "question": "What is HTTP status code 404?",
+    "groq_answer": "HTTP status code 404 is \"Not Found.\" It indicates that the server cannot find the requested resource, such as a webpage, image, or file. This error occurs when a user attempts to access a URL that does not exist or has been removed.",
+    "gemini_answer": "Gemini response for: What is HTTP status code 404?... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 232,
+    "gemini_char_length": 92,
+    "winner": "groq",
+    "reason": "Option A provides a fully correct, faithful, and complete explanation of HTTP status code 404, adhering to the user's request. Option B fails to address the question and contains irrelevant content, resulting in a significantly lower score.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 107,
+      "gemini_tokens": 50,
+      "judge_tokens": 2143,
+      "total_tokens": 2300
+    },
+    "total_tokens": 2300,
+    "latency_ms": 22541
+  },
+  {
+    "question_id": "q_010",
+    "category": "architecture",
+    "question": "Describe the main components of the Model-View-Controller (MVC) pattern.",
+    "groq_answer": "The Model-View-Controller (MVC) pattern consists of three main components:\n\n1. **Model**: Represents the data and business logic of the application. It manages the data, performs calculations, and enforces business rules.\n2. **View**: Handles the user interface and displays the data provided by the Model. It receives input from the user and sends it to the Controller for processing.\n3. **Controller**: Acts as an intermediary between the Model and View. It receives input from the user, interacts with the Model to perform actions, and updates the View with the results.\n\nThese components work together to separate concerns, promote reusability, and make the application easier to maintain and extend.",
+    "gemini_answer": "Gemini response for: Describe the main components of the Mode... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 704,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a complete, accurate, and well-structured description of the MVC pattern, covering all main components thoroughly. Option B fails to provide any relevant content due to a quota limit issue, resulting in a score of 1 across all criteria.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 1.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 205,
+      "gemini_tokens": 50,
+      "judge_tokens": 2390,
+      "total_tokens": 2645
+    },
+    "total_tokens": 2645,
+    "latency_ms": 22794
+  },
+  {
+    "question_id": "q_011",
+    "category": "general_knowledge",
+    "question": "Explain what an API is in simple words.",
+    "groq_answer": "An API, or Application Programming Interface, is like a messenger between different computer systems. It helps them talk to each other and share information.\n\nImagine you're at a restaurant and you want to order food. You can't just walk into the kitchen and make your own food. Instead, you give your order to the waiter, and they take it to the kitchen staff. They then prepare your food and give it back to the waiter, who brings it to you.\n\nIn this example, the waiter is like an API. You (the customer) are like a computer system, and the kitchen is like another computer system. The waiter (API) helps you communicate with the kitchen, so you can get what you need (your food) without having to go into the kitchen yourself.\n\nAPIs work in a similar way, allowing different computer systems to communicate with each other and share information, without having to know all the details about how the other system works.",
+    "gemini_answer": "Gemini response for: Explain what an API is in simple words.... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 922,
+    "gemini_char_length": 102,
+    "winner": "groq",
+    "reason": "Option A provides a clear, accurate, and complete explanation of what an API is, using a relatable analogy. Option B fails to provide any relevant content due to a quota limit issue, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 249,
+      "gemini_tokens": 50,
+      "judge_tokens": 2467,
+      "total_tokens": 2766
+    },
+    "total_tokens": 2766,
+    "latency_ms": 22823
+  },
+  {
+    "question_id": "q_012",
+    "category": "networking",
+    "question": "What is the difference between TCP and UDP?",
+    "groq_answer": "TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two fundamental protocols used for data communication over the internet. The main differences between them are:\n\n**1. Connection-oriented vs Connectionless:**\n\t* TCP: Establishes a connection between the sender and receiver before data is sent. This ensures that data is delivered in the correct order.\n\t* UDP: Does not establish a connection before sending data. Packets are sent independently, and there is no guarantee of delivery or order.\n\n**2. Reliability:**\n\t* TCP: Guarantees reliable data transfer by using acknowledgments (ACKs) and retransmissions. If a packet is lost or corrupted, TCP will retransmit it.\n\t* UDP: Does not guarantee reliable data transfer. If a packet is lost or corrupted, it will not be retransmitted.\n\n**3. Error-checking and correction:**\n\t* TCP: Performs error-checking and correction using checksums and sequence numbers.\n\t* UDP: Performs basic error-checking using checksums, but does not correct errors.\n\n**4. Flow control and congestion avoidance:**\n\t* TCP: Implements flow control and congestion avoidance mechanisms to prevent network overload.\n\t* UDP: Does not have built-in flow control or congestion avoidance mechanisms.\n\n**5. Speed and latency:**\n\t* TCP: Generally slower due to the overhead of establishing and maintaining connections, as well as error-checking and correction.\n\t* UDP: Faster and more suitable for real-time applications, as it has lower overhead and latency.\n\n**Use cases:**\n\t* TCP: Suitable for applications that require guaranteed delivery, such as file transfers, email, and web browsing.\n\t* UDP: Suitable for applications that require fast and efficient transmission, such as online gaming, video streaming, and VoIP (Voice over Internet Protocol).\n\nIn summary, TCP is a reliable, connection-oriented protocol, while UDP is a fast, connectionless protocol. The choice between TCP and UDP depends on the specific requirements of the application or service.",
+    "gemini_answer": "Gemini response for: What is the difference between TCP and U... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 1996,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a comprehensive, accurate, and well-structured explanation of the differences between TCP and UDP, covering all relevant aspects. Option B fails to provide any meaningful content due to a quota limit issue, resulting in a score of 1 across all criteria.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 469,
+      "gemini_tokens": 50,
+      "judge_tokens": 2882,
+      "total_tokens": 3401
+    },
+    "total_tokens": 3401,
+    "latency_ms": 21891
+  },
+  {
+    "question_id": "q_013",
+    "category": "coding",
+    "question": "What is the time complexity of binary search and why?",
+    "groq_answer": "**Time Complexity of Binary Search: O(log n)**\n\nBinary search is an efficient algorithm for finding an element in a sorted list. The time complexity of binary search is O(log n), where n is the number of elements in the list.\n\n**Why:**\n\n1. **Divide and Conquer**: Binary search uses a divide-and-conquer approach, dividing the search space in half at each step.\n2. **Reducing Search Space**: With each comparison, the algorithm eliminates half of the remaining search space, reducing the number of elements to search.\n3. **Logarithmic Reduction**: The number of steps required to find the target element is proportional to the logarithm of the size of the search space.\n\nTo illustrate this, consider a binary search on a list of 16 elements:\n\n* Initial search space: 16 elements\n* First comparison: Reduce search space to 8 elements (half of 16)\n* Second comparison: Reduce search space to 4 elements (half of 8)\n* Third comparison: Reduce search space to 2 elements (half of 4)\n* Fourth comparison: Find the target element (or determine it's not present)\n\nIn this example, the algorithm performs 4 comparisons to find the target element in a list of 16 elements. As the list size increases, the number of comparisons grows logarithmically. Therefore, the time complexity of binary search is O(log n).",
+    "gemini_answer": "Gemini response for: What is the time complexity of binary se... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 1301,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a complete and accurate explanation of the time complexity of binary search, including the reasoning behind it. Option B fails to provide any relevant content due to a quota limit issue, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 5.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 346,
+      "gemini_tokens": 50,
+      "judge_tokens": 2666,
+      "total_tokens": 3062
+    },
+    "total_tokens": 3062,
+    "latency_ms": 24444
+  },
+  {
+    "question_id": "q_014",
+    "category": "system_design",
+    "question": "What is Docker and why is it useful?",
+    "groq_answer": "**Docker Overview**\n===============\n\nDocker is a containerization platform that allows developers to package, ship, and run applications in containers. Containers are lightweight and portable, providing a consistent and reliable way to deploy applications across different environments.\n\n**Key Benefits of Docker**\n------------------------\n\n1. **Isolation**: Containers run in isolation from each other and the host system, ensuring that applications do not interfere with each other.\n2. **Portability**: Containers are portable across different environments, such as development, testing, staging, and production.\n3. **Lightweight**: Containers are much lighter than virtual machines, requiring fewer system resources.\n4. **Fast Deployment**: Containers can be spun up and down quickly, making it ideal for agile development and continuous integration/continuous deployment (CI/CD) pipelines.\n5. **Efficient Resource Utilization**: Containers can share the same kernel and operating system, reducing the overhead of running multiple virtual machines.\n\n**Use Cases for Docker**\n----------------------\n\n1. **Web Development**: Docker simplifies the development and deployment of web applications, allowing developers to focus on writing code rather than managing dependencies.\n2. **DevOps**: Docker enables teams to automate testing, building, and deployment of applications, reducing the time and effort required to get changes to production.\n3. **Microservices Architecture**: Docker provides a natural fit for microservices architecture, allowing teams to deploy and manage multiple services independently.\n4. **Cloud Computing**: Docker provides a consistent and reliable way to deploy applications across different cloud providers, such as AWS, Azure, and Google Cloud.\n\n**Why is Docker Useful?**\n----------------------\n\nDocker is useful because it provides a consistent and reliable way to deploy applications across different environments, reducing the complexity and overhead of managing dependencies and infrastructure. By using Docker, developers and teams can:\n\n* Improve collaboration and communication\n* Reduce the time and effort required to deploy applications\n* Increase the reliability and consistency of deployments\n* Simplify the management of dependencies and infrastructure\n\nOverall, Docker provides a powerful tool for developers and teams to build, deploy, and manage applications in a consistent and reliable way, making it an essential part of modern software development and deployment.",
+    "gemini_answer": "Gemini response for: What is Docker and why is it useful?... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 2511,
+    "gemini_char_length": 99,
+    "winner": "groq",
+    "reason": "Option A provides a comprehensive, accurate, and well-structured explanation of Docker, covering its definition, benefits, use cases, and overall usefulness. In contrast, Option B fails to provide any relevant content due to a quota limit issue, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 1.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 494,
+      "gemini_tokens": 50,
+      "judge_tokens": 2977,
+      "total_tokens": 3521
+    },
+    "total_tokens": 3521,
+    "latency_ms": 23089
+  },
+  {
+    "question_id": "q_015",
+    "category": "reasoning",
+    "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "groq_answer": "Let's denote the cost of the ball as x.\n\nSince the bat costs $1.00 more than the ball, the bat costs x + $1.00.\n\nThe total cost of the bat and the ball is $1.10, so we can set up the equation:\n\nx + (x + $1.00) = $1.10\n\nCombine like terms:\n\n2x + $1.00 = $1.10\n\nSubtract $1.00 from both sides:\n\n2x = $0.10\n\nDivide both sides by 2:\n\nx = $0.05\n\nSo, the ball costs $0.05 (5 cents).",
+    "gemini_answer": "Gemini response for: A bat and a ball cost $1.10 in total. Th... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 376,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a complete and correct solution to the problem, demonstrating clear logical steps and arriving at the correct answer. Option B fails to provide any relevant content due to a quota limit, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 216,
+      "gemini_tokens": 50,
+      "judge_tokens": 2487,
+      "total_tokens": 2753
+    },
+    "total_tokens": 2753,
+    "latency_ms": 24411
+  },
+  {
+    "question_id": "q_016",
+    "category": "security",
+    "question": "What is the difference between authentication and authorization?",
+    "groq_answer": "**Authentication vs Authorization: Key Differences**\n\n*   **Authentication**: The process of verifying the identity of a user, typically through a username and password, biometric data, or other credentials. It ensures that the user is who they claim to be.\n*   **Authorization**: The process of determining what actions an authenticated user is allowed to perform, based on their role, permissions, or access level. It controls what resources the user can access and what actions they can take.\n\nTo illustrate the difference:\n\n1.  **Authentication**: A user logs in to a website with their username and password (authentication).\n2.  **Authorization**: Once logged in, the user is granted access to certain features or resources based on their role (e.g., admin, moderator, or regular user), which is authorization.\n\nIn summary, authentication confirms the user's identity, while authorization determines what the user can do within a system or application.",
+    "gemini_answer": "Gemini response for: What is the difference between authentic... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 958,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a clear, accurate, and complete explanation of the differences between authentication and authorization, adhering to the user prompt effectively. Option B fails to provide any relevant content due to a quota limit issue, resulting in a score of 1 across all criteria.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 1.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 242,
+      "gemini_tokens": 50,
+      "judge_tokens": 2437,
+      "total_tokens": 2729
+    },
+    "total_tokens": 2729,
+    "latency_ms": 22776
+  },
+  {
+    "question_id": "q_017",
+    "category": "coding",
+    "question": "What is a hash table and what is its average time complexity for lookups?",
+    "groq_answer": "**Hash Table:**\nA hash table, also known as a hash map, is a data structure that stores key-value pairs in a way that allows for efficient lookup, insertion, and deletion of elements. It uses a hash function to map keys to indices of an array, where the corresponding values are stored.\n\n**Average Time Complexity for Lookups:**\nThe average time complexity for lookups in a hash table is **O(1)**, also known as constant time. This is because the hash function allows for direct access to the desired element, assuming a good hash function and a low load factor.\n\nNote: In the worst-case scenario, where all keys collide (i.e., hash to the same index), the time complexity can degrade to **O(n)**, where n is the number of elements in the table. However, with a well-designed hash function and proper resizing, the average case of O(1) can be maintained.",
+    "gemini_answer": "Gemini response for: What is a hash table and what is its ave... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 854,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a complete and accurate explanation of what a hash table is and its average time complexity for lookups, adhering to all aspects of the user prompt. Option B fails to provide any relevant information due to a quota limit issue, resulting in a significantly lower score across all criteria.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 253,
+      "gemini_tokens": 50,
+      "judge_tokens": 2471,
+      "total_tokens": 2774
+    },
+    "total_tokens": 2774,
+    "latency_ms": 21904
+  },
+  {
+    "question_id": "q_018",
+    "category": "general_knowledge",
+    "question": "Explain the difference between machine learning and deep learning.",
+    "groq_answer": "Machine learning (ML) and deep learning (DL) are both subsets of artificial intelligence (AI). The key difference between them lies in their approach to data analysis and complexity:\n\n**Machine Learning (ML):**\n\n* ML involves training algorithms to make predictions or decisions based on data.\n* It uses a set of predefined rules and features to learn from the data.\n* ML models are typically less complex and require less data to train.\n* Examples of ML include linear regression, decision trees, and support vector machines.\n\n**Deep Learning (DL):**\n\n* DL is a subset of ML that uses neural networks with multiple layers to analyze data.\n* It can learn and represent complex patterns in data, such as images, speech, and text.\n* DL models are more complex and require large amounts of data to train.\n* Examples of DL include convolutional neural networks (CNNs), recurrent neural networks (RNNs), and long short-term memory (LSTM) networks.\n\nIn summary, while ML is a broader field that encompasses various algorithms and techniques, DL is a specific type of ML that uses neural networks to analyze complex data. DL is particularly useful for tasks that require a high level of accuracy and complexity, such as image recognition, natural language processing, and speech recognition.",
+    "gemini_answer": "Gemini response for: Explain the difference between machine l... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 1284,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a comprehensive and accurate explanation of the differences between machine learning and deep learning, covering key aspects and examples. Option B fails to provide any relevant content due to a quota limit issue, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 1.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 314,
+      "gemini_tokens": 50,
+      "judge_tokens": 2593,
+      "total_tokens": 2957
+    },
+    "total_tokens": 2957,
+    "latency_ms": 21183
+  },
+  {
+    "question_id": "q_019",
+    "category": "instruction_following",
+    "question": "List exactly 5 HTTP methods used in RESTful APIs.",
+    "groq_answer": "Here are 5 HTTP methods used in RESTful APIs:\n\n1. GET\n2. POST\n3. PUT\n4. DELETE\n5. PATCH",
+    "gemini_answer": "Gemini response for: List exactly 5 HTTP methods used in REST... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 87,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A correctly lists the 5 HTTP methods as requested, fully adhering to the user prompt. Option B fails to provide any relevant information and instead presents an error message, resulting in a significantly lower score across all criteria.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 91,
+      "gemini_tokens": 50,
+      "judge_tokens": 2128,
+      "total_tokens": 2269
+    },
+    "total_tokens": 2269,
+    "latency_ms": 21797
+  },
+  {
+    "question_id": "q_020",
+    "category": "architecture",
+    "question": "What are microservices and how do they differ from a monolithic architecture?",
+    "groq_answer": "**Microservices vs Monolithic Architecture**\n\n### Overview\n\nIn software development, two common architectural approaches are microservices and monolithic architecture. The primary difference between these two approaches lies in how the application is structured and how its components interact with each other.\n\n### Monolithic Architecture\n\nA monolithic architecture is a self-contained, single-unit application where all components are tightly coupled and share the same codebase. This approach is characterized by:\n\n* A single, unified codebase\n* All components are interconnected and interdependent\n* Scalability is achieved by scaling the entire application\n* Changes to the application require a full redeployment\n\n### Microservices Architecture\n\nA microservices architecture, on the other hand, is a distributed system where the application is broken down into smaller, independent services that communicate with each other through APIs. This approach is characterized by:\n\n* Multiple, separate services with their own codebases\n* Each service is responsible for a specific business capability\n* Services communicate with each other through lightweight protocols (e.g., REST, gRPC)\n* Scalability is achieved by scaling individual services\n* Changes to a service can be deployed independently without affecting the entire application\n\n### Key differences\n\nThe main differences between microservices and monolithic architecture are:\n\n1. **Modularity**: Microservices are modular, with each service being a separate entity, while monolithic architecture is a single, unified unit.\n2. **Scalability**: Microservices can be scaled independently, while monolithic architecture requires scaling the entire application.\n3. **Flexibility**: Microservices allow for greater flexibility in terms of technology stack, programming languages, and deployment options.\n4. **Resilience**: Microservices are more resilient, as a failure in one service does not affect the entire application.\n\n### Example\n\nTo illustrate the difference, consider an e-commerce application:\n\n* Monolithic architecture: The entire application, including user authentication, product catalog, and payment processing, is built as a single unit.\n* Microservices architecture: The application is broken down into separate services, such as:\n\t+ User authentication service\n\t+ Product catalog service\n\t+ Payment processing service\n\t+ Order management service\n\nEach service communicates with the others through APIs, allowing for greater flexibility, scalability, and resilience.",
+    "gemini_answer": "Gemini response for: What are microservices and how do they d... (Gemini free-tier quota limit reached)",
+    "groq_char_length": 2540,
+    "gemini_char_length": 103,
+    "winner": "groq",
+    "reason": "Option A provides a comprehensive and accurate explanation of microservices and monolithic architecture, covering all requested aspects thoroughly. Option B fails to provide any relevant content due to a quota limit issue, resulting in a score of 1 across all criteria. Therefore, Option A is the clear winner.",
+    "groq_scores": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 5.0,
+      "tone_safety": 5.0,
+      "overall": 5.0
+    },
+    "gemini_scores": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
+    },
+    "ab_winner": "groq",
+    "ba_winner": "groq",
+    "position_flipped": false,
+    "position_bias_detected": false,
+    "token_usage": {
+      "groq_tokens": 519,
+      "gemini_tokens": 50,
+      "judge_tokens": 3037,
+      "total_tokens": 3606
+    },
+    "total_tokens": 3606,
+    "latency_ms": 25299
+  }
+]

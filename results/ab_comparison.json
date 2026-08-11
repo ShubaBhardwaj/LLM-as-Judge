@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-08-11T22:39:18Z",
+  "config_a": {
+    "name": "baseline_prompt",
+    "total_questions": 20,
+    "win_rates": {
+      "groq": 0.95,
+      "gemini": 0.05,
+      "tie": 0.0
+    },
+    "mean_overall_score": 3.075,
+    "position_flip_rate": 0.05,
+    "position_flip_count": 1
+  },
+  "config_b": {
+    "name": "anti_bias_enhanced_prompt",
+    "total_questions": 20,
+    "win_rates": {
+      "groq": 1.0,
+      "gemini": 0.0,
+      "tie": 0.0
+    },
+    "mean_overall_score": 2.975,
+    "position_flip_rate": 0.0,
+    "position_flip_count": 0
+  },
+  "winner": "config_b (anti_bias_prompt)",
+  "rationale": "Config B demonstrated lower position flip rate (0.0% vs 5.0%)."
+}

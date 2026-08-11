@@ -1,103 +1,53 @@
 {
-  "total_questions": 10,
-  "groq_win_rate": 1.0,
-  "gemini_win_rate": 0.0,
-  "tie_rate": 0.0,
-  "mean_groq_overall_score": 4.82,
-  "mean_gemini_overall_score": 4.3,
-  "position_flip_rate": 1.0,
-  "total_tokens": 0,
-  "total_latency_seconds": 1.03,
-  "evaluations": [
-    {
-      "question_id": "q_001",
-      "question": "Write a Python function to reverse a linked list.",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
+  "total_questions": 20,
+  "winner_counts": {
+    "groq": 20,
+    "gemini": 0,
+    "tie": 0
+  },
+  "win_rates": {
+    "groq": 1.0,
+    "gemini": 0.0,
+    "tie": 0.0
+  },
+  "mean_scores": {
+    "groq": {
+      "correctness": 5.0,
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "instruction_following": 4.9,
+      "tone_safety": 5.0,
+      "overall": 4.95
     },
-    {
-      "question_id": "q_002",
-      "question": "If all A are B, and some B are C, are all A necessarily C? Explain why.",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
-    },
-    {
-      "question_id": "q_003",
-      "question": "Explain the difference between horizontal and vertical scaling in distributed databases.",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
-    },
-    {
-      "question_id": "q_004",
-      "question": "Summarize the concept of API rate limiting in exactly 3 bullet points.",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
-    },
-    {
-      "question_id": "q_005",
-      "question": "What is the capital of France and what river flows through it?",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
-    },
-    {
-      "question_id": "q_006",
-      "question": "What is the derivative of f(x) = 3x^2 + 5x - 7 with respect to x?",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
-    },
-    {
-      "question_id": "q_007",
-      "question": "Explain the difference between process and thread in operating systems.",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
-    },
-    {
-      "question_id": "q_008",
-      "question": "What is SQL injection and how can developers prevent it?",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
-    },
-    {
-      "question_id": "q_009",
-      "question": "What is HTTP status code 404?",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
-    },
-    {
-      "question_id": "q_010",
-      "question": "Describe the main components of the Model-View-Controller (MVC) pattern.",
-      "winner": "groq",
-      "groq_overall": 4.82,
-      "gemini_overall": 4.3,
-      "position_bias_flipped": true,
-      "reason": "Option A provided higher accuracy, better clarity, and followed all prompt instructions precisely."
+    "gemini": {
+      "correctness": 1.0,
+      "faithfulness": 1.0,
+      "completeness": 1.0,
+      "instruction_following": 1.0,
+      "tone_safety": 3.0,
+      "overall": 1.0
     }
-  ]
+  },
+  "score_clustering": {
+    "mean_overall": 2.975,
+    "std_dev": 1.981,
+    "score_min": 1.0,
+    "score_max": 5.0,
+    "score_range": 4.0,
+    "max_identical_score_count": 20
+  },
+  "position_bias": {
+    "flip_count": 0,
+    "flip_rate": 0.0
+  },
+  "verbosity_length": {
+    "avg_groq_char_length": 1234,
+    "avg_gemini_char_length": 102,
+    "longer_answer_win_rate": 0.9
+  },
+  "latency": {
+    "average_ms": 22988
+  },
+  "total_tokens": 59663,
+  "total_latency_seconds": 499.828
 }

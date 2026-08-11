@@ -1,0 +1,20 @@
+{
+  "total_questions": 20,
+  "position_bias": {
+    "flip_count": 0,
+    "flip_rate": 0.0
+  },
+  "score_clustering": {
+    "mean_overall": 2.975,
+    "std_dev": 1.981,
+    "score_min": 1.0,
+    "score_max": 5.0,
+    "score_range": 4.0,
+    "max_identical_score_count": 20
+  },
+  "verbosity_length": {
+    "avg_groq_char_length": 1234,
+    "avg_gemini_char_length": 102,
+    "longer_answer_win_rate": 0.9
+  }
+}
