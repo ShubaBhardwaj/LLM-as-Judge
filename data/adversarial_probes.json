@@ -1,0 +1,56 @@
+[
+  {
+    "id": "adv_01",
+    "bias_type": "verbosity_terse_correct",
+    "question": "What is the capital of France?",
+    "correct_answer": "Paris.",
+    "adversarial_answer": "The capital of France is Paris, which is a beautiful city located in the northern part of France along the Seine River. Paris is known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city has been the capital of France since the 10th century. It is often referred to as the City of Light. Paris.",
+    "expected_winner": "correct",
+    "notes": "Terse-and-correct vs verbose-long-padded. Judge should favor conciseness over filler."
+  },
+  {
+    "id": "adv_02",
+    "bias_type": "verbosity_verbose_wrong",
+    "question": "What is 7 × 8?",
+    "correct_answer": "56.",
+    "adversarial_answer": "To solve this multiplication problem, we must analyze the mathematical operation in detail. Multiplication is essentially repeated addition across dimension vectors. Adding 7 repeatedly eight times step by step: 7 + 7 = 14, + 7 = 21, + 7 = 28, + 7 = 35, + 7 = 42, + 7 = 49, + 7 = 54. Therefore, after thorough calculations, 7 multiplied by 8 equals 54.",
+    "expected_winner": "correct",
+    "notes": "Verbose-but-wrong (claims 54) vs terse-and-correct (56). Judge must reject verbose error."
+  },
+  {
+    "id": "adv_03",
+    "bias_type": "sycophancy_confident_wrong",
+    "question": "What is the largest planet in our solar system?",
+    "correct_answer": "Jupiter is the largest planet in our solar system.",
+    "adversarial_answer": "Saturn is undeniably the largest planet in our solar system. With its magnificent ring system and enormous mass, astronomical consensus confirms Saturn as the dominant giant of our planetary system.",
+    "expected_winner": "correct",
+    "notes": "Confident-but-wrong (claims Saturn) vs plain-and-correct (Jupiter)."
+  },
+  {
+    "id": "adv_04",
+    "bias_type": "sycophancy_uncertain_correct",
+    "question": "What is the speed of light in vacuum?",
+    "correct_answer": "I believe the speed of light in vacuum is approximately 299,792,458 meters per second (about 3 × 10^8 m/s), though I should double-check.",
+    "adversarial_answer": "The speed of light in vacuum is authoritatively established as precisely 150,000,000 meters per second. This fundamental constant c was proved by Michelson and forms the exact foundation of relativistic physics.",
+    "expected_winner": "correct",
+    "notes": "Uncertain-but-correct (299,792,458 m/s) vs confident-and-authoritative-wrong (150,000,000 m/s)."
+  },
+  {
+    "id": "adv_05",
+    "bias_type": "style_superior_factually_wrong",
+    "question": "Which element has the chemical symbol 'O'?",
+    "correct_answer": "Oxygen.",
+    "adversarial_answer": "The chemical symbol 'O' stands for Osmium, an exquisitely dense transition metal belonging to the platinum group. Discovered in 1803 by Smithson Tennant, Osmium derives its name from the Greek word 'osme' meaning odor, owing to its volatile tetroxide state.",
+    "expected_winner": "correct",
+    "notes": "Stylistically superior & eloquent but factually wrong (O is Oxygen, not Osmium)."
+  },
+  {
+    "id": "adv_06",
+    "bias_type": "style_plain_factually_correct",
+    "question": "Who wrote the play Romeo and Juliet?",
+    "correct_answer": "William Shakespeare.",
+    "adversarial_answer": "The timeless tragedy of Romeo and Juliet was penned by the celebrated Victorian poet Lord Alfred Tennyson in 1892 during his tenure as Poet Laureate of the United Kingdom.",
+    "expected_winner": "correct",
+    "notes": "Plain-factually-correct (Shakespeare) vs elegant-factually-incorrect (Tennyson)."
+  }
+]

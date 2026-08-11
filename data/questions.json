@@ -1,0 +1,122 @@
+[
+  {
+    "id": "q_001",
+    "category": "coding",
+    "question": "Write a Python function to reverse a linked list.",
+    "reference_answer": "Use two pointers, prev and current. Iterate through the list, setting current.next to prev, then advance both pointers."
+  },
+  {
+    "id": "q_002",
+    "category": "reasoning",
+    "question": "If all A are B, and some B are C, are all A necessarily C? Explain why.",
+    "reference_answer": "No. All A being B and some B being C does not guarantee that any A is C, because the set of B that are C might not overlap with set A."
+  },
+  {
+    "id": "q_003",
+    "category": "system_design",
+    "question": "Explain the difference between horizontal and vertical scaling in distributed databases.",
+    "reference_answer": "Vertical scaling adds more CPU/RAM to a single node. Horizontal scaling adds more machines/nodes to partition data across a cluster."
+  },
+  {
+    "id": "q_004",
+    "category": "instruction_following",
+    "question": "Summarize the concept of API rate limiting in exactly 3 bullet points.",
+    "reference_answer": "- Controls request volume per client.\n- Protects servers from overload and DDoS attacks.\n- Uses algorithms like token bucket or leaky bucket."
+  },
+  {
+    "id": "q_005",
+    "category": "general_knowledge",
+    "question": "What is the capital of France and what river flows through it?",
+    "reference_answer": "The capital of France is Paris, and the Seine River flows through it."
+  },
+  {
+    "id": "q_006",
+    "category": "math",
+    "question": "What is the derivative of f(x) = 3x^2 + 5x - 7 with respect to x?",
+    "reference_answer": "f'(x) = 6x + 5"
+  },
+  {
+    "id": "q_007",
+    "category": "coding",
+    "question": "Explain the difference between process and thread in operating systems.",
+    "reference_answer": "A process has independent memory space, while threads of the same process share memory space and resources."
+  },
+  {
+    "id": "q_008",
+    "category": "security",
+    "question": "What is SQL injection and how can developers prevent it?",
+    "reference_answer": "SQL injection occurs when untrusted user input alters database queries. Prevent it by using parameterized queries / prepared statements."
+  },
+  {
+    "id": "q_009",
+    "category": "conciseness",
+    "question": "What is HTTP status code 404?",
+    "reference_answer": "HTTP status code 404 means 'Not Found'."
+  },
+  {
+    "id": "q_010",
+    "category": "architecture",
+    "question": "Describe the main components of the Model-View-Controller (MVC) pattern.",
+    "reference_answer": "Model handles data and logic, View handles UI presentation, Controller handles input and coordinates between Model and View."
+  },
+  {
+    "id": "q_011",
+    "category": "general_knowledge",
+    "question": "Explain what an API is in simple words.",
+    "reference_answer": "An API is a set of rules that allows different software programs to communicate with each other."
+  },
+  {
+    "id": "q_012",
+    "category": "networking",
+    "question": "What is the difference between TCP and UDP?",
+    "reference_answer": "TCP is connection-oriented with guaranteed delivery. UDP is connectionless with no delivery guarantee but lower latency."
+  },
+  {
+    "id": "q_013",
+    "category": "coding",
+    "question": "What is the time complexity of binary search and why?",
+    "reference_answer": "O(log n) because it halves the search space with each comparison."
+  },
+  {
+    "id": "q_014",
+    "category": "system_design",
+    "question": "What is Docker and why is it useful?",
+    "reference_answer": "Docker packages applications in containers for consistent deployment across environments, ensuring portability and isolation."
+  },
+  {
+    "id": "q_015",
+    "category": "reasoning",
+    "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "reference_answer": "The ball costs $0.05. If ball = x, then bat = x + 1.00, so x + x + 1.00 = 1.10, giving 2x = 0.10, x = 0.05."
+  },
+  {
+    "id": "q_016",
+    "category": "security",
+    "question": "What is the difference between authentication and authorization?",
+    "reference_answer": "Authentication verifies who you are (identity). Authorization determines what you are allowed to do (permissions)."
+  },
+  {
+    "id": "q_017",
+    "category": "coding",
+    "question": "What is a hash table and what is its average time complexity for lookups?",
+    "reference_answer": "A hash table maps keys to values using a hash function. Average lookup time is O(1)."
+  },
+  {
+    "id": "q_018",
+    "category": "general_knowledge",
+    "question": "Explain the difference between machine learning and deep learning.",
+    "reference_answer": "Machine learning uses algorithms to learn from data. Deep learning is a subset using neural networks with many layers to learn complex patterns."
+  },
+  {
+    "id": "q_019",
+    "category": "instruction_following",
+    "question": "List exactly 5 HTTP methods used in RESTful APIs.",
+    "reference_answer": "GET, POST, PUT, PATCH, DELETE."
+  },
+  {
+    "id": "q_020",
+    "category": "architecture",
+    "question": "What are microservices and how do they differ from a monolithic architecture?",
+    "reference_answer": "Microservices decompose an application into small independent services. A monolith is a single deployable unit containing all functionality."
+  }
+]

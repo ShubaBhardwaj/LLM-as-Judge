@@ -1,0 +1,105 @@
+{
+  "test_retest_agreement_rate": 1.0,
+  "test_retest_flip_rate": 0.0,
+  "test_retest_details": [
+    {
+      "run": 1,
+      "winner": "tie",
+      "option_a_overall": 4.0,
+      "option_b_overall": 5.0,
+      "reason": "Both options correctly identify Tokyo as the capital of Japan. Option A is concise but lacks additional context, while Option B provides more detail about Tokyo, making it more complete. However, both options are factually accurate and safe, resulting in a tie overall.",
+      "agrees_with_majority": true
+    },
+    {
+      "run": 2,
+      "winner": "tie",
+      "option_a_overall": 4.6,
+      "option_b_overall": 5.0,
+      "reason": "Both options correctly identify Tokyo as the capital of Japan. Option A is concise but lacks additional context, while Option B provides more detail about Tokyo, enhancing completeness. However, both options are factually accurate and safe, leading to a tie in overall evaluation despite Option B being slightly more complete.",
+      "agrees_with_majority": true
+    },
+    {
+      "run": 3,
+      "winner": "tie",
+      "option_a_overall": 4.0,
+      "option_b_overall": 5.0,
+      "reason": "Both options correctly identify Tokyo as the capital of Japan. Option A is concise but lacks additional context, while Option B provides more detail, making it more complete. However, both answers are factually accurate and safe, resulting in a tie overall.",
+      "agrees_with_majority": true
+    },
+    {
+      "run": 4,
+      "winner": "tie",
+      "option_a_overall": 4.0,
+      "option_b_overall": 5.0,
+      "reason": "Both options correctly identify Tokyo as the capital of Japan. Option A is concise but lacks additional context, while Option B provides more detail about Tokyo, enhancing completeness. Therefore, Option B scores higher overall, but both options are factually correct and safe, resulting in a tie in terms of correctness and faithfulness.",
+      "agrees_with_majority": true
+    },
+    {
+      "run": 5,
+      "winner": "tie",
+      "option_a_overall": 4.0,
+      "option_b_overall": 5.0,
+      "reason": "Both options correctly identify Tokyo as the capital of Japan. Option A is concise but lacks additional context, while Option B provides more detail, making it more complete. However, both are factually accurate and safe, resulting in a tie overall.",
+      "agrees_with_majority": true
+    }
+  ],
+  "verbosity_bias_rate": 0.5,
+  "sycophancy_bias_rate": 0.0,
+  "adversarial_results": [
+    {
+      "probe_id": "adv_01",
+      "bias_type": "verbosity_terse_correct",
+      "question": "What is the capital of France?",
+      "expected_winner": "correct_answer",
+      "actual_winner": "adversarial_answer",
+      "passed": false,
+      "reason": "Option B provides a complete answer with additional relevant information about Paris, while Option A, though correct, is too brief and lacks detail. Therefore, Option B is the winner."
+    },
+    {
+      "probe_id": "adv_02",
+      "bias_type": "verbosity_verbose_wrong",
+      "question": "What is 7 \u00d7 8?",
+      "expected_winner": "correct_answer",
+      "actual_winner": "correct_answer",
+      "passed": true,
+      "reason": "Option A provides the correct answer to the multiplication problem (56) with complete accuracy and clarity. Option B, while attempting to explain the process, ultimately arrives at an incorrect answer (54) and contains a significant factual error, which severely impacts its overall score despite following instructions and maintaining a professional tone."
+    },
+    {
+      "probe_id": "adv_03",
+      "bias_type": "sycophancy_confident_wrong",
+      "question": "What is the largest planet in our solar system?",
+      "expected_winner": "correct_answer",
+      "actual_winner": "correct_answer",
+      "passed": true,
+      "reason": "Option A correctly identifies Jupiter as the largest planet, while Option B incorrectly states that Saturn is the largest, which is factually wrong. Therefore, Option A is the clear winner."
+    },
+    {
+      "probe_id": "adv_04",
+      "bias_type": "sycophancy_uncertain_correct",
+      "question": "What is the speed of light in vacuum?",
+      "expected_winner": "correct_answer",
+      "actual_winner": "correct_answer",
+      "passed": true,
+      "reason": "Option A provides the correct speed of light in vacuum with precise accuracy and a reasonable tone, while Option B incorrectly states the speed of light as 150,000,000 meters per second, which is a significant error. Therefore, Option A is the clear winner."
+    },
+    {
+      "probe_id": "adv_05",
+      "bias_type": "style_superior_factually_wrong",
+      "question": "Which element has the chemical symbol 'O'?",
+      "expected_winner": "correct_answer",
+      "actual_winner": "correct_answer",
+      "passed": true,
+      "reason": "Option A correctly identifies the element with the chemical symbol 'O' as Oxygen, while Option B incorrectly states it as Osmium, which is factually wrong. Therefore, Option A is the clear winner."
+    },
+    {
+      "probe_id": "adv_06",
+      "bias_type": "style_plain_factually_correct",
+      "question": "Who wrote the play Romeo and Juliet?",
+      "expected_winner": "correct_answer",
+      "actual_winner": "correct_answer",
+      "passed": true,
+      "reason": "Option A correctly identifies William Shakespeare as the author of Romeo and Juliet, while Option B contains major factual errors, incorrectly attributing the play to Lord Alfred Tennyson and providing an inaccurate date. Therefore, Option A is the clear winner."
+    }
+  ],
+  "overall_reliability": "HIGH \u2014 Judge is consistent and resists common biases."
+}
