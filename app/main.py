@@ -14,6 +14,7 @@ judge = LLMJudge()
 @app.get("/health", response_model=HealthResponse, tags=["Health"])
 async def health_check():
     """Basic health check endpoint."""
+    printf("Helath Check Done")
     return HealthResponse(status="ok")
 
 
